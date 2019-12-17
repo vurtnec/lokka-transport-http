@@ -1,10 +1,10 @@
 {
-  "name": "lokka-transport-http",
-  "version": "1.6.1",
-  "description": "Isomorphic HTTP Transport for Lokka",
+  "name": "@aaxis/lokka-transport-http",
+  "version": "1.0.0",
+  "description": "Isomorphic HTTP Transport for Lokka with Expose handle Request and Response",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/lokka-transport-http.git"
+    "url": "https://github.com/vurtnec/lokka-transport-http.git"
   },
   "license": "MIT",
   "options": {
@@ -13,7 +13,8 @@
   "keywords": [
     "lokka",
     "transport",
-    "http"
+    "http",
+    "aaxis"
   ],
   "scripts": {
     "prepublish": ". ./scripts/prepublish.sh",
