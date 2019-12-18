@@ -1,24 +1,22 @@
-# lokka-transport-http
+# @aaxis/lokka-transport-http
 
-Isomorphic HTTP Transport Layer for [Lokka](https://github.com/kadirahq/lokka)
+Isomorphic HTTP Transport Layer with Expose handle Request and Response 
 
 ---
 
-This is a [graphql-express](https://github.com/graphql/express-graphql) compatible transport layer for [Lokka](https://github.com/kadirahq/lokka).
+This is a compatible transport layer for [Lokka](https://github.com/kadirahq/lokka).
 
 ## Basic Usage
 
 Install the package:
 
 ```
-npm i --save lokka-transport-http
+npm i --save @aaxis/lokka-transport-http
 npm i --save lokka
 ```
 
-This is how to send request to Facebook's [SWAPI GraphQL Demo](http://graphql-swapi.parseapp.com/).
-
 ```js
-import HttpTransport from 'lokka-transport-http';
+import HttpTransport from '@aaxis/lokka-transport-http';
 const transport = new HttpTransport('http://graphql-swapi.parseapp.com/');
 transport.send(`
     {
@@ -33,7 +31,7 @@ transport.send(`
 });
 ```
 
-## Send Custom Headers
+## Send Custom Request & Response
 
 It's possible to send custom headers like this:
 
@@ -41,7 +39,15 @@ It's possible to send custom headers like this:
 const headers = {
     'my-headers': 'some-value'
 };
-const transport = new HttpTransport('/graphql', {headers});
+const transport = new HttpTransport('/graphql', {
+    headers,
+    buildOptions: () => {
+      // build you custom header here
+    },
+    formatResponse: (response) => {
+      // format you response here
+    }
+})
 ```
 
 ## Authentication

@@ -1,6 +1,6 @@
 {
   "name": "@aaxis/lokka-transport-http",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Isomorphic HTTP Transport for Lokka with Expose handle Request and Response",
   "repository": {
     "type": "git",
